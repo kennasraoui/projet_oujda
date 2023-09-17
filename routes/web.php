@@ -268,6 +268,8 @@ Route::post('/delete_value_field', [App\Http\Controllers\InventaireController::c
 Route::post('/delete_value_field_inventaire', [App\Http\Controllers\InventaireController::class, 'delete_value_field_inventaire']);
 Route::post('/choix_inventaires', [App\Http\Controllers\InventaireController::class, 'choix_inventaires'])->name('choix_inventaires');
 
+Route::get('/selectionner_entite_inventaire', [App\Http\Controllers\InventaireController::class, 'selectionner_entite_inventaire'])->name('selectionner_entite_inventaire');
+
 /** gestion physique */
 
 

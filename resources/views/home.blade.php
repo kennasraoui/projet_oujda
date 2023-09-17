@@ -56,8 +56,8 @@
                   </span>
                   <span class="label_menu _left"> Rechercher un dossier </span>
                </li>
-
-               <li class="link_menu__left" onclick="window.open('{{url('inventaire_choix')}}', '_self');">
+                 {{--  'inventaire_choix' --}}
+               <li class="link_menu__left" onclick="window.open('{{url('selectionner_entite_inventaire')}}', '_self');">
                   <span class="icon_menu_left" >
                   <img src="{{ asset('img_app/icons8-nouveau-produit-48.png') }}" style="width: 20px;">
                   </span>

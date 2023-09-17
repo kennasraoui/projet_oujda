@@ -178,6 +178,8 @@ class UserController extends Controller
     }
     public function updateUser(Request $request)
     {
+
+       
         function is_array_empty($arr){
             if(is_array($arr)){
             foreach($arr as $value){
@@ -216,7 +218,7 @@ class UserController extends Controller
         $user->telephone = $request->telephone;
 
 
-        $user->id_inventaire = $request->id_iventaire;
+        $user->id_inventaire =  json_encode($request->id_iventaire);
         if($request->email != '' ){
             $user->email = $request->email;
         }
@@ -261,6 +263,7 @@ class UserController extends Controller
 
         return redirect()->route('user_list')
          ->with('message','User est modifiée avec success');
+
 
 
     }
