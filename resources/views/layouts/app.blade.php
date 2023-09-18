@@ -280,6 +280,7 @@ p.top_header {
                         </a>
                         Accueil
                      </li>
+                     @if (Auth::user()->hasPermissionTo('Gestion physique')) 
 
                      <li class="icon_menu   {{ request()->is('gestion_physique')  ? 'active' : '' }} ">
                         <a href="{{route('gestion_physique')}}">
@@ -290,7 +291,8 @@ p.top_header {
                         Gestion physique
                      </li>
    
-
+                     @endif
+                
                      
                      @if (Auth::user()->hasPermissionTo('Gestion des prets') || Auth::user()->hasPermissionTo('demande des prêts')  || Auth::user()->hasPermissionTo('Validation des prêts')  ) 
                         <li class="icon_menu   {{ request()->is('prets')  ? 'active' : '' }} " data-bs-toggle="tooltip" data-bs-placement="top" title="">

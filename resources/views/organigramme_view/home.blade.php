@@ -51,7 +51,7 @@
                <thead>
                    <tr>
                        <th scope="col">Num</th>
-                       <th scope="col">Nom plan de classement</th>
+                       <th scope="col">Nom plan de classement  </th>
                        <th scope="col">Action  </th>
 
 

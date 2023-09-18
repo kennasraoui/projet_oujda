@@ -114,13 +114,14 @@
                         <?php for($n=0;$n<count($array_table_inventaires[$i]['field_inventaires']);$n++){ ?>
                         <td> <?php echo $array_table_inventaires[$i]['field_inventaires'][$n] ?> </td>
                         <?php } ?>
-                    
+                        @if (Auth::user()->hasPermissionTo('Supprimer de inventaire')) 
+
                            <td>
                               <div class="block_action_organigramme">
                                  <a href="" onclick="removeRow_table_champs_add(event,<?php echo $array_table_inventaires[$i]['id_field_inventaire'] ?>)"><i class="fa-solid fa-circle-xmark "></i></a>
                               </div>
                            </td>
-                       
+                           @endif
                      </tr>
                      <?php } ?>
                   </tbody>
