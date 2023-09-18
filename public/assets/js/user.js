@@ -13,6 +13,8 @@ $(document).ready(function() {
 
 
 
+  $('#select_inventaire').select2();
+
   $('#select_project').select2();
 
   var cpt =0;

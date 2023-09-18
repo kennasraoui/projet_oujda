@@ -252,4 +252,22 @@ class InventaireController extends Controller
           return view("gestion_physique", );
 
     }
+    public function selectionner_entite_inventaire(){
+
+        $user = Auth::user();
+        $upd = User::find($user->id);
+        $array = $upd->id_inventaire ;
+
+        $array =json_decode($array, true);
+
+        
+         $organigramme = Organigramme::whereIn('id',  $array)->get();
+
+         $data = array(
+            'user' => $user,
+            'projets' => $organigramme,
+        );
+
+        return view("selectionner_entite_inventaire", $data);
+    }
 }

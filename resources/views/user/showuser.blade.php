@@ -148,14 +148,21 @@
                         <div id="row0" class="row mb-3">
                            <label for="select_project" class="col-md-4 col-form-label text-md-end">Les inventaires  </label>
                            <div class="col-md-6">
-                              <select id=""  class=" form-control " name="id_iventaire">
+                              <select id="select_inventaire"  class=" form-control " name="id_iventaire[]" multiple="multiple">
                                  <option value="">Selectionner</option>
-                                 <?php for($i=0;$i<count($inventaire);$i++){ ?>
-                                    <?php if($inventaire[$i]['id'] == $user->id_inventaire ){ ?>
-                                    <option value="<?php echo $inventaire[$i]['id']; ?>" selected><?php echo $inventaire[$i]['nom']; ?></option>
-                                 <?php  } else { ?>
-                                    <option value="<?php echo $inventaire[$i]['id']; ?>" ><?php echo $inventaire[$i]['nom']; ?></option>
-                                 <?php  } ?>
+                                
+
+                                 <?php $choix_inventaire = json_decode($user->id_inventaire, true);   for($i=0;$i<count($inventaire);$i++){ ?>
+                                    <?php if( isset($choix_inventaire)  ) {  ?>
+                                      
+                                          <?php if (array_search($inventaire[$i]['id'], $choix_inventaire )) {    ?>
+                                          <option value="<?php echo $inventaire[$i]['id']; ?>" selected><?php echo $inventaire[$i]['nom']; ?></option>
+                                          <?php  } else {  ?>
+                                          <option value="<?php echo $inventaire[$i]['id']; ?>" ><?php echo $inventaire[$i]['nom']; ?></option>
+                                          <?php  } ?>
+                                       <?php  } else { ?>
+                                       <option value="<?php echo $inventaire[$i]['id']; ?>" ><?php echo $inventaire[$i]['nom']; ?></option>
+                                    <?php  } ?>
                                  <?php  } ?>
                               </select>
                            </div>
