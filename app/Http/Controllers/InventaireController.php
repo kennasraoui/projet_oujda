@@ -248,7 +248,7 @@ class InventaireController extends Controller
     }
 
     public function gestion_physique(Request $request){
-
+     //$tt
           return view("gestion_physique", );
 
     }
