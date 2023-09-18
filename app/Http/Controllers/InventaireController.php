@@ -254,7 +254,7 @@ class InventaireController extends Controller
     }
     public function selectionner_entite_inventaire(){
 
-        $user = Auth::user();
+        $user = Auth::user(); 
         $upd = User::find($user->id);
         $array = $upd->id_inventaire ;
 
